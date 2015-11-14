@@ -4,7 +4,8 @@
         .image-slider .carousel-indicators {
             opacity: 1.0 !important;
             position: relative !important;
-            left: 0 !important;
+            left: -24px !important;
+            top: 0;
             width: 100% !important;
             margin-left: 0 !important;
         }
@@ -12,29 +13,33 @@
             opacity: 1.0 !important;
         }
         .image-slider .carousel-indicators li {
-            width: 100px !important;
+            border: 0 !important;
+            border-radius: 0 !important;
+            width: {settings.indicatorImgWidth}px !important;
             height: auto !important;
-            float: left;
+            /* float: left; */
             opacity: 0.6 !important;
         }
         .image-slider .carousel-indicators li.active {
-            width: 100px !important;
+            border: 0 !important;
+            border-radius: 0 !important;
+            width: {settings.indicatorImgWidth}px !important;
             height: auto !important;
-            float: left;
+            /* float: left; */
             opacity: 1.0 !important;
         }
         .image-slider .carousel-indicators li img {
-            left: 0;
+            left: 1px;
             float: left;
-            opacity: 0.5 !important;
+            opacity: 0.6 !important;
         }
         .image-slider .carousel-indicators li.active img {
-            left: 0;
+            left: 1px;
             float: left;
             opacity: 1.0 !important;
         }
         .image-slider .carousel-inner .item {
-            height: {settings.itemHeight} !important;
+            height: {settings.itemHeight}px !important;
         }
 </style>
 <div class="image-slider">

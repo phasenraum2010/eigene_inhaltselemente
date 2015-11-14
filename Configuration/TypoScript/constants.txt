@@ -1,8 +1,8 @@
 plugin.tx_eigene_inhaltselemente {
     carousel {
-        # cat=plugin.tx_eigene_inhaltselemente//a; type=string; label=Height of the Image Slider
-        itemHeight = 400px
-        # cat=plugin.tx_eigene_inhaltselemente//a; type=string; label=Width of the Indicator Icons
+        # cat=plugin.tx_eigene_inhaltselemente//a; type=pixels; label=Height of the Image Slider
+        itemHeight = 400
+        # cat=plugin.tx_eigene_inhaltselemente//a; type=pixels; label=Width of the Indicator Icons
         indicatorImgWidth = 100
     }
 }
