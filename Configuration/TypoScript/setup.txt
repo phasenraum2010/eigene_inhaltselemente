@@ -1,0 +1,67 @@
+tt_content.image_slider = FLUIDTEMPLATE
+tt_content.image_slider {
+	file = EXT:eigene_inhaltselemente/Resources/Private/Templates/ImageSlider.html
+	variables {
+		indicators = FILES
+		indicators {
+			references {
+				table = tt_content
+				fieldName = image
+			}
+			renderObj = IMAGE
+			renderObj {
+				file.import.data = file:current:uid
+				file.treatIdAsReference = 1
+				#file.width = {$plugin.tx_eigene_inhaltselemente.carousel.indicatorImgWidth}
+				file.width = 100
+				altText.data = file:current:alternative
+				titleText.data = file:current:title
+				wrap = |XXX |*| |XXX |*| |
+			}
+		}
+		imageSlides = FILES
+		imageSlides {
+			references {
+				table = tt_content
+				fieldName = image
+			}
+			renderObj = IMAGE
+			renderObj {
+				params = class="img-responsive"
+				file.import.data = file:current:uid
+				file.treatIdAsReference = 1
+				altText.data = file:current:alternative
+				titleText.data = file:current:title
+				wrap = <div class="###ITEMCLASS###">|<div class="carousel-caption">###ASDF###</div></div>
+				stdWrap.replacement {
+					10 {
+						search = ###ASDF###
+						replace.data = file:current:description
+					}
+				}
+			}
+			stdWrap.wrap = <div class="carousel-inner" role="listbox">|</div>
+			stdWrap.replacement {
+				10 {
+					search = ###ITEMCLASS###
+					replace = item active || item
+					useOptionSplitReplace = 1
+				}
+				20 {
+					search = #width="[0-9]*?"#i
+					replace = width="100%"
+					useRegExp = 1
+				}
+				30 {
+					search = # height="[0-9]*?"#i
+					replace =
+					useRegExp = 1
+				}
+			}
+		}
+	}
+	settings {
+		itemHeight = {$plugin.tx_eigene_inhaltselemente.carousel.itemHeight}
+	}
+}
+page.includeJSFooter.tx_ = EXT:eigene_inhaltselemente/Resources/Public/JS/meine_js_datei.js
