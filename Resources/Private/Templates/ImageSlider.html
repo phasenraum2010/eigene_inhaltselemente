@@ -1,5 +1,7 @@
 <div xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
-     v:schemaLocation="https://fluidtypo3.org/schemas/vhs-master.xsd">
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     v:schemaLocation="https://fluidtypo3.org/schemas/vhs-master.xsd"
+     f:schemaLocation="https://fluidtypo3.org/schemas/fluid-master.xsd">
 <style type="text/css">
         .image-slider .carousel-indicators {
             opacity: 1.0 !important;
@@ -15,7 +17,8 @@
         .image-slider .carousel-indicators li {
             border: 0 !important;
             border-radius: 0 !important;
-            width: {settings.indicatorImgWidth}px !important;
+            width: <f:format.raw>{settings.indicatorImgWidth}</f:format.raw>px !important;
+            /* width: 100px !important; */
             height: auto !important;
             /* float: left; */
             opacity: 0.6 !important;
@@ -23,7 +26,8 @@
         .image-slider .carousel-indicators li.active {
             border: 0 !important;
             border-radius: 0 !important;
-            width: {settings.indicatorImgWidth}px !important;
+            width: <f:format.raw>{settings.indicatorImgWidth}</f:format.raw>px !important;
+            /*width: 100px !important;*/
             height: auto !important;
             /* float: left; */
             opacity: 1.0 !important;
@@ -39,15 +43,15 @@
             opacity: 1.0 !important;
         }
         .image-slider .carousel-inner .item {
-            height: {settings.itemHeight}px !important;
+            height: <f:format.raw>{settings.itemHeight}</f:format.raw>px !important;
         }
 </style>
 <div class="image-slider">
     <div class="row">
         <div class="col-md-12">
             <div class="image-slider__header">
-                <h3>{data.header}</h3>
-                <h4>{data.subheader}</h4>
+                <h3><f:format.raw>{data.header}</f:format.raw></h3>
+                <h4><f:format.raw>{data.subheader}</f:format.raw></h4>
             </div>
         </div>
     </div>

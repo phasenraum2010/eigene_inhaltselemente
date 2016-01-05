@@ -62,7 +62,7 @@ tt_content.image_slider {
 	}
 	settings {
 		itemHeight = {$plugin.tx_eigene_inhaltselemente.carousel.itemHeight}
-		indicatorImgWidth= {$plugin.tx_eigene_inhaltselemente.carousel.indicatorImgWidth}
+		indicatorImgWidth = {$plugin.tx_eigene_inhaltselemente.carousel.indicatorImgWidth}
 	}
 }
 page.includeJSFooter.tx_ = EXT:eigene_inhaltselemente/Resources/Public/JS/meine_js_datei.js
