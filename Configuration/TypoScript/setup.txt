@@ -12,8 +12,9 @@ tt_content.image_slider {
 			renderObj {
 				file.import.data = file:current:uid
 				file.treatIdAsReference = 1
-				#file.width = {$plugin.tx_eigene_inhaltselemente.carousel.indicatorImgWidth}
-				file.width = 100
+				file.width = {$plugin.tx_eigene_inhaltselemente.carousel.indicatorImgWidth}
+				file.height = {$plugin.tx_eigene_inhaltselemente.carousel.indicatorImgWidth}
+				#file.width = 100
 				altText.data = file:current:alternative
 				titleText.data = file:current:title
 				wrap = |XXX |*| |XXX |*| |
@@ -27,7 +28,7 @@ tt_content.image_slider {
 			}
 			renderObj = IMAGE
 			renderObj {
-				params = class="img-responsive"
+				params = class="img-responsive img-rounded"
 				file.import.data = file:current:uid
 				file.treatIdAsReference = 1
 				altText.data = file:current:alternative

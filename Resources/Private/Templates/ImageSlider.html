@@ -5,8 +5,7 @@
 <style type="text/css">
         .image-slider .carousel-indicators {
             opacity: 1.0 !important;
-            position: relative !important;
-            left: -24px !important;
+            position: relative !important;            
             top: 0;
             width: 100% !important;
             margin-left: 0 !important;
@@ -21,7 +20,7 @@
             /* width: 100px !important; */
             height: auto !important;
             /* float: left; */
-            opacity: 0.6 !important;
+            /* opacity: 0.6 !important; */
         }
         .image-slider .carousel-indicators li.active {
             border: 0 !important;
@@ -30,12 +29,14 @@
             /*width: 100px !important;*/
             height: auto !important;
             /* float: left; */
-            opacity: 1.0 !important;
+            /* opacity: 1.0 !important; */
         }
         .image-slider .carousel-indicators li img {
             left: 1px;
             float: left;
             opacity: 0.6 !important;
+            width: <f:format.raw>{settings.indicatorImgWidth}</f:format.raw>px !important;
+			height: auto !important;
         }
         .image-slider .carousel-indicators li.active img {
             left: 1px;
@@ -43,20 +44,26 @@
             opacity: 1.0 !important;
         }
         .image-slider .carousel-inner .item {
-            height: <f:format.raw>{settings.itemHeight}</f:format.raw>px !important;
+            /* height: <f:format.raw>{settings.itemHeight}</f:format.raw>px !important; */
         }
 </style>
 <div class="image-slider">
     <div class="row">
-        <div class="col-md-12">
+	    <div class="col-md-2">
+		&nbsp;
+		</div>
+        <div class="col-md-6">
             <div class="image-slider__header">
                 <h3><f:format.raw>{data.header}</f:format.raw></h3>
                 <h4><f:format.raw>{data.subheader}</f:format.raw></h4>
             </div>
         </div>
+		<div class="col-md-4">
+		&nbsp;
+		</div>
     </div>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="image-slider__icons">
                 <!-- Indicators -->
                 <v:iterator.explode content="{indicators}" as="othervariable" glue="XXX">
@@ -85,7 +92,8 @@
                 </a>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
+			<br /><br />
             <div class="well">
                 <div class="image-slider__text">
                     <p>{data.bodytext -> f:format.html()}</p>
